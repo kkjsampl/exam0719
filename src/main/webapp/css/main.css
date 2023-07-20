@@ -1,10 +1,23 @@
 @charset "UTF-8";
 
-#page {
-	width: 1000px;
+/* reset */ 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#page { 
+	width: 1005px;
 	margin: 0 auto;
 }
 
-#data {
+#page section {
+	width: 800px;
 	min-height: 600px;
+	border: 1px solid orange;
+	padding: 5px;
+}
+
+#page main {
+	display: flex;
 }

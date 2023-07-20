@@ -19,33 +19,46 @@
 </head>
 <body>
 	<div id="page">
-		<div id="data">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>작성일</th>
-						<th>읽기</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${list}" var="board">
+		<header>
+			<jsp:include page="/include/header.jsp" />
+		</header>
+		<nav>
+			<jsp:include page="/include/nav.jsp" />
+		</nav>
+		<main>
+			<aside>
+				<jsp:include page="/include/aside.jsp" />
+			</aside>
+			<section>
+				<table class="table table-hover">
+					<thead>
 						<tr>
-							<td>${board.bno }</td>
-							<td>
-								<a href="/aboard1/read?bno=${board.bno}">${board.title}</a>
-							</td>
-							<td>${board.nickname }</td>
-							<td>${board.writeday }</td>
-							<td>${board.readcnt }</td>
+							<th>번호</th>
+							<th>제목</th>
+							<th>글쓴이</th>
+							<th>작성일</th>
+							<th>읽기</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-		<a type="button" class="btn btn-outline-primary" href="/aboard1/write">글 작성</a>
+					</thead>
+					<tbody>
+						<c:forEach items="${list}" var="board">
+							<tr>
+								<td>${board.bno }</td>
+								<td>
+									<a href="/aboard1/read?bno=${board.bno}">${board.title}</a>
+								</td>
+								<td>${board.nickname }</td>
+								<td>${board.writeday }</td>
+								<td>${board.readcnt }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</section>
+		</main>
+		<footer>
+			<jsp:include page="/include/footer.jsp" />
+		</footer>
 	</div>
 </body>
 </html>
